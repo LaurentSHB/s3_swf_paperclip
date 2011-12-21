@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-S3SwfTest::Application.load_tasks
+S3SwfPaperclip::Application.load_tasks

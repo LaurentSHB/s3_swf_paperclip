@@ -1,4 +1,4 @@
-S3SwfTest::Application.routes.draw do
+S3SwfPaperclip::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

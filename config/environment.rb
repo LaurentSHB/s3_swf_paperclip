@@ -2,4 +2,4 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-S3SwfTest::Application.initialize!
+S3SwfPaperclip::Application.initialize!
