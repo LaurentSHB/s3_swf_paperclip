@@ -14,7 +14,7 @@ class AssetsController < ApplicationController
 
     respond_to do |format|
       if @asset.save
-        format.js  { } # crazy cool stuff here
+        format.js  {render :text => 'ok' } # crazy cool stuff here
       else
         format.js  { render :text => 'alert("Failure from Rails!");' }
       end
