@@ -46,7 +46,7 @@
 </div>
 
 <% @assets.each do |asset| %>
-  <%= image_tag(asset.asset.url(:thumb)) %><%= image_tag(asset.asset.url(:large)) %>
+  <%= image_tag(asset.asset.url(:thumb)) %><%= image_tag(asset.asset.url(:large)) %><%= image_tag(asset.asset.url(:original)) %>
 <% end %>
 
 
@@ -85,6 +85,7 @@
     document.getElementById('overall').firstChild.style.width = '100%';
     document.getElementById('overall').firstChild.firstChild.innerHTML = '100%';
     alert('All files have been successfully uploaded');
+    location.reload()
   };
 
   var queueClearHandler = function(queue){
@@ -129,10 +130,29 @@
     document.getElementById('overall').firstChild.firstChild.innerHTML = overall_percentage;
   };
 
-  var uploadCompleteHandler = function(upload_options,event){
+  /*var uploadCompleteHandler = function(upload_options,event){
     queueBytesLoaded += parseInt(upload_options.FileSize);
     addFileToDoneList(upload_options.FileName,upload_options.FileSize);
-  };
+  };*/
+  var uploadCompleteHandler = function(upload_options,event){
+
+        $.ajax({
+	      url: '<%= create_some_assets_path(:format => :js)%>',
+	      global: false,
+	      type: 'POST',
+	      data: ({
+	        'authenticity_token' : '<%= form_authenticity_token %>',
+		'asset' : {
+		    'asset_file_name' : upload_options.FileName,
+	            'asset_file_size' : upload_options.FileSize,
+	            'asset_content_type' : upload_options.ContentType
+		}
+		}),
+	      dataType: 'script'
+	   }
+	)
+        
+};
 
   var readableBytes = function(bytes) {
     var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];

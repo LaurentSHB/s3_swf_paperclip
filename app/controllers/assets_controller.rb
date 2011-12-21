@@ -8,4 +8,16 @@ class AssetsController < ApplicationController
     asset.save
     redirect_to assets_path
   end
+
+  def create_some
+    @asset = Asset.new(params[:asset])
+
+    respond_to do |format|
+      if @asset.save
+        format.js  { } # crazy cool stuff here
+      else
+        format.js  { render :text => 'alert("Failure from Rails!");' }
+      end
+    end
+  end
 end

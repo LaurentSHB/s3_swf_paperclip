@@ -1,7 +1,11 @@
 S3SwfPaperclip::Application.routes.draw do
   resources :s3_uploads
 
-  resources :assets
+  resources :assets do
+    collection do
+      post :create_some
+    end
+  end
 
   root :to => "assets#index"
   # The priority is based upon order of creation:
