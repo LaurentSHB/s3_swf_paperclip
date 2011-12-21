@@ -1,0 +1,24 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: s3_swf_test_development
+  pool: 5
+  username: laurent
+  password: laurent
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: s3_swf_test_test
+  pool: 5
+  username: laurent
+  password: laurent
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: s3_swf_test_production
+  pool: 5
+  username: laurent
+  password: laurent
