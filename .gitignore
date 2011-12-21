@@ -7,3 +7,4 @@ db/schema.rb
 nbproject/*
 .rvmrc
 config/s3.yml
+config/amazon_s3.yml

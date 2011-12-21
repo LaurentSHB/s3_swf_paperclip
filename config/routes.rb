@@ -1,4 +1,6 @@
 S3SwfPaperclip::Application.routes.draw do
+  resources :s3_uploads
+
   resources :assets
 
   root :to => "assets#index"

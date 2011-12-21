@@ -9,6 +9,7 @@ gem 'pg'
 
 gem 'paperclip'
 gem 'aws-s3'
+gem 's3_swf_upload', :git => 'git://github.com/nathancolgate/s3-swf-upload-plugin'
 # Use unicorn as the web server
 # gem 'unicorn'
 

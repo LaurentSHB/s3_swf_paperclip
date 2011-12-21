@@ -1,0 +1,21 @@
+development:
+  bucket: assets.s3_swf_paperclip_development
+  access_key_id: AK________________YQ
+  secret_access_key: L5____________________________________wQ
+  max_file_size: 100000000000
+  acl: public-read
+
+
+test:
+  bucket: assets.s3_swf_paperclip_test
+  access_key_id: AK________________YQ
+  secret_access_key: L5____________________________________wQ
+  max_file_size: 100000000000
+  acl: public-read
+
+production:
+  bucket: assets.s3_swf_paperclip_production
+  access_key_id: AK________________YQ
+  secret_access_key: L5____________________________________wQ
+  max_file_size: 100000000000
+  acl: public-read
