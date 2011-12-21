@@ -1,4 +1,7 @@
 S3SwfPaperclip::Application.routes.draw do
+  resources :assets
+
+  root :to => "assets#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

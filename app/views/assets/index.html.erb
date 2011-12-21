@@ -1,0 +1,8 @@
+<%  form_for Asset.new, :html => { :multipart => true} do |f|%>
+    <%= f.file_field :asset %>
+    <%= f.submit "Send" %>
+<% end %>
+
+<% @assets.each do |asset| %>
+    <%= image_tag(asset.asset.url(:thumb)) %><%= image_tag(asset.asset.url(:large)) %>
+<% end %>
