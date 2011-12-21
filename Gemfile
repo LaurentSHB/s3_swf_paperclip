@@ -6,6 +6,9 @@ gem 'rails', '3.0.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+
+gem 'paperclip'
+gem 'aws-s3'
 # Use unicorn as the web server
 # gem 'unicorn'
 

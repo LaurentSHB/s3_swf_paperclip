@@ -6,4 +6,4 @@ config/database.yml
 db/schema.rb
 nbproject/*
 .rvmrc
-
+config/s3.yml

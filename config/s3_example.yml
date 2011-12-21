@@ -1,0 +1,14 @@
+development:
+  access_key_id: AK________________YQ
+  secret_access_key: L5____________________________________wQ
+  bucket: assets.s3_swf_paperclip_development
+
+test:
+  access_key_id: AK________________YQ
+  secret_access_key: L5____________________________________wQ
+  bucket: assets.s3_swf_paperclip_test
+
+production:
+  access_key_id: AK________________YQ
+  secret_access_key: L5____________________________________wQ
+  bucket: assets.s3_swf_paperclip_production
