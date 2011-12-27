@@ -130,32 +130,27 @@
     document.getElementById('overall').firstChild.firstChild.innerHTML = overall_percentage;
   };
 
-  /*var uploadCompleteHandler = function(upload_options,event){
-    queueBytesLoaded += parseInt(upload_options.FileSize);
-    addFileToDoneList(upload_options.FileName,upload_options.FileSize);
-  };*/
+  //A chaque fichier uploadé on va faire un appel ajax pour enregistrer l'objet et reprocesser l'image
   var uploadCompleteHandler = function(upload_options,event){
     queueBytesLoaded += parseInt(upload_options.FileSize);
     addFileToDoneList(upload_options.FileName,upload_options.FileSize);
   
-
-        $.ajax({
-	      url: '<%= create_some_assets_path(:format => :js)%>',
-	      global: false,
-	      type: 'POST',
-	      data: ({
-	        'authenticity_token' : '<%= form_authenticity_token %>',
-		'asset' : {
-		    'asset_file_name' : upload_options.FileName,
-	            'asset_file_size' : upload_options.FileSize,
-	            'asset_content_type' : upload_options.ContentType
-		}
-		}),
-	      dataType: 'script'
-	   }
-	)
+    $.ajax({
+      url: '<%= create_some_assets_path(:format => :js)%>',
+      global: false,
+      type: 'POST',
+      data: ({
+        'authenticity_token' : '<%= form_authenticity_token %>',
+        'asset' : {
+          'asset_file_name' : upload_options.FileName,
+          'asset_file_size' : upload_options.FileSize,
+          'asset_content_type' : upload_options.ContentType
+        }
+      }),
+      dataType: 'script'
+    })
         
-};
+  };
 
   var readableBytes = function(bytes) {
     var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
