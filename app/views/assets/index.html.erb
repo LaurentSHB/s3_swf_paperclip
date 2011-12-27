@@ -135,6 +135,9 @@
     addFileToDoneList(upload_options.FileName,upload_options.FileSize);
   };*/
   var uploadCompleteHandler = function(upload_options,event){
+    queueBytesLoaded += parseInt(upload_options.FileSize);
+    addFileToDoneList(upload_options.FileName,upload_options.FileSize);
+  
 
         $.ajax({
 	      url: '<%= create_some_assets_path(:format => :js)%>',
